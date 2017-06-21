@@ -378,7 +378,11 @@ public class DataEntryActivity extends BaseActivity implements LoaderManager.Loa
             groups.add(adapter.getGroup());
         }
 
-        if(!validateFields(groups)){
+        if (allFieldsCompulsory(groups) && !validateFields(groups)) {
+            ToastManager.makeToast(this, getString(R.string.all_questions_compulsories_error),
+                    Toast.LENGTH_SHORT).show();
+            return;
+        } else if (!validateFields(groups)) {
             ToastManager.makeToast(this, getString(R.string.compulsory_empty_error),
                     Toast.LENGTH_SHORT).show();
             return;
@@ -400,6 +404,17 @@ public class DataEntryActivity extends BaseActivity implements LoaderManager.Loa
         for (Group group:groups){
             for(Field field:group.getFields()){
                 if(field.isCompulsory() && (field.getValue()==null || field.getValue().equals(""))){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    private boolean allFieldsCompulsory(ArrayList<Group> groups) {
+        for (Group group : groups) {
+            for (Field field : group.getFields()) {
+                if (!field.isCompulsory()) {
                     return false;
                 }
             }
