@@ -42,7 +42,8 @@ public enum RowTypes {
     DATE,
     AUTO_COMPLETE,
     GENDER,
-    NO_SUPPORTED_ROW
+    NO_SUPPORTED_ROW,
+    PERCENTAGE
 }
 
 
