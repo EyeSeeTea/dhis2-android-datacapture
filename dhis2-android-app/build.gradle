@@ -15,7 +15,7 @@ android {
         targetSdkVersion 25
         versionCode 25
         versionName "1.7.4"
-        applicationId "org.dhis2.mobile_dev"
+        applicationId "org.dhis2.mobile_eyeseetea_dev"
     }
 
     buildTypes {
