@@ -57,6 +57,7 @@ import org.dhis2.mobile.ui.adapters.dataEntry.rows.LongTextRow;
 import org.dhis2.mobile.ui.adapters.dataEntry.rows.NegativeIntegerRow;
 import org.dhis2.mobile.ui.adapters.dataEntry.rows.NotSupportedRow;
 import org.dhis2.mobile.ui.adapters.dataEntry.rows.NumberRow;
+import org.dhis2.mobile.ui.adapters.dataEntry.rows.PercentageRow;
 import org.dhis2.mobile.ui.adapters.dataEntry.rows.PosIntegerRow;
 import org.dhis2.mobile.ui.adapters.dataEntry.rows.PosOrZeroIntegerRow;
 import org.dhis2.mobile.ui.adapters.dataEntry.rows.Row;
@@ -151,6 +152,11 @@ public class FieldAdapter extends BaseAdapter {
                 rows.add(new DatePickerRow(inflater, field, this, context));
             } else if (field.getType().equals(RowTypes.GENDER.name())) {
                 rows.add(new GenderRow(inflater, field));
+            } else if (field.getType().equals(RowTypes.PERCENTAGE.name())) {
+                PercentageRow percentageRow = new PercentageRow(inflater,field);
+                percentageRow.setOnEditorActionListener(customOnEditorActionListener);
+                percentageRow.setReadOnly(readOnly);
+                rows.add(percentageRow);
             } else{
                 rows.add(new NotSupportedRow(inflater, field));
             }

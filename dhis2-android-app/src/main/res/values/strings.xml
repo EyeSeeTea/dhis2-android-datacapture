@@ -135,4 +135,5 @@
     <string name="dataset_readonly_by_expiry_days">"Data set has expired"</string>
     <string name="logged_in">"Logged in as: "</string>
     <string name="at_server">"At server: "</string>
+    <string name="enter_percentage_value">"Percentage value (between 0 and 100)"</string>
 </resources>

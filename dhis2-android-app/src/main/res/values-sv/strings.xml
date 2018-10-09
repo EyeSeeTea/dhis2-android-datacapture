@@ -108,4 +108,5 @@
 
   <string name="dataset_readonly_by_approve">"Godkänd dataset"</string>
   <string name="dataset_readonly_by_expiry_days">"Förfallit dataset"</string>
+  <string name="enter_percentage_value">"Procentvärde (mellan 0 och 100)"</string>
 </resources>
